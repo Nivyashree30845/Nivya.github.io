@@ -1,0 +1,57 @@
+nav{
+    color: aliceblue;
+    background-color: black;
+   }
+ h1{
+     text-align: center;
+     font-style:oblique ;
+ }
+ h2{
+    font-style: oblique;
+ }
+ .one{
+    color: aliceblue;
+    padding: 300px;
+    padding-top: 200px;
+ }
+ li,h2,ul,a{
+     display: inline;
+     color: white;
+     font-style: oblique;
+     
+ }
+ ul{
+     margin-left: 300px;
+     padding: 100px;
+     color: white;
+ } 
+ li{
+     padding: 20px;
+     
+ }
+ 
+ 
+ body{
+     background-color: antiquewhite;
+     background-image: url(images/home\ cake.jpg);
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: 100% 100%;
+     background-size: cover;
+ }
+ .p1{
+     margin-left: 100px;
+ }
+ .p2{
+     margin-left: 100px;
+ }
+ .p3{
+     margin-left: 100px;
+ }
+ .p4{
+     margin-left: 100px;
+ }
+ td{
+    border: 1px solid black;
+ }
+ 
