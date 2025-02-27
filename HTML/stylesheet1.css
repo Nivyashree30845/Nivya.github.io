@@ -1,0 +1,37 @@
+nav{
+    color: aliceblue;
+    background-color: black;
+   }
+   td{
+     border: 1px solid black;
+     padding: 50px;
+   }
+ h1{
+     text-align: center
+ }
+ li,h2,ul{
+  display: inline;
+  
+}
+ul{
+  margin-left: 600px;
+  padding: 100px;
+} 
+li{
+  padding: 20px;
+}
+ body{
+     background-color: antiquewhite;
+ }
+ .p1{
+     margin-left: 100px;
+ }
+ .p2{
+     margin-left: 100px;
+ }
+ .p3{
+     margin-left: 100px;
+ }
+ .p4{
+     margin-left: 100px;
+ }
