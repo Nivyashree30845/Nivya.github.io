@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Cakes</title>
+    <link rel="icon" href="images/cake favicon.jpg">
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-style: oblique;
+            text-align: center;
+        }
+    </style>
+   
+</head>
+<body>
+    <header>
+        <h1>Place Your Cake Order</h1>
+    </header>
+    <script>
+        function validateForm() {
+            var name = document.forms["myform"]["name"].value;
+            var phno = document.forms["myform"]["phno"].value;
+            var email = document.forms["myform"]["email"].value;
+            var cake = document.forms["myform"]["cake"].value;
+            var message = document.forms["myform"]["message"].value;
+
+
+            if (phno.length !== 10) {
+                alert("Please enter a valid 10-digit phone number");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Please enter an email address");
+                return false;
+            }
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid email format");
+                return false;
+            }
+            if (message === "") {
+                alert("Please enter a message if no message then enter nil");
+                return false;
+            }
+
+            if (cake === "") {
+                alert("Please select a cake");
+                return false;
+            }
+
+
+           
+            return true;
+        }
+        function response(){
+            var name = document.forms["myform"]["name"].value;
+            var phno = document.forms["myform"]["phno"].value;
+            var email = document.forms["myform"]["email"].value;
+            var cake = document.forms["myform"]["cake"].value;
+            var message = document.forms["myform"]["message"].value;
+
+            alert("Thank you for order");
+            document.write("Here are your details:");
+            document.write("<br>");
+            document.write("Name:" +name);
+            document.write("<br>");
+            document.write("Email:" +email);
+            document.write("<br>");
+            document.write("PhoneNumber:" +phno);
+            document.write("<br>");
+            document.write("Cake:" +cake);
+            document.write("<br>");
+            document.write("message:" +message);
+            document.write("<br>");
+
+        }
+    </script>
+    <section>
+        <form name="myform" method="get" onsubmit="validateForm(),response()"></form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+        </form>
+        <label for="phno">Phone Number:</label>
+        <input type="tel" id="phno" name="phno" required><br><br>
+
+            <label for="cake">Choose a Cake:</label>
+            <select id="cake" name="cake">
+                <option value="">select</option>
+                <option value="chocolate">Chocolate Cake</option>
+                <option value="vanilla">Vanilla Cake</option>
+                <option value="red_velvet">Red Velvet Cake</option>
+            </select><br><br>
+
+            <label for="message">Special Instructions:</label>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+           <input type="button" value="Place Order" onclick="validateForm(),response()"/>
+        </form>
+    </section>
+</body>
+</html>
