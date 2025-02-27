@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var username = document.myform.username.value;
+            var mobileNumber = document.myform.mobileNumber.value;
+            var email = document.myform.email.value;
+            var password = document.myform.password.value;
+            var confirmPassword = document.myform.confirmPassword.value;
+            
+            if (mobileNumber.length != 10) {
+                alert("Please enter a valid 10-digit mobile number");
+                return false;
+            }
+            var emailRegex = /@/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid email format");
+                return false;
+            }
+            if (password.length < 8) {
+                alert("Password must be at least 8characters");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                document.write('<span style="color: red;">Correct your password in the confirm password field</span>');
+
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>User Registration Form</h1>
+    <form name="myform" method="get" onsubmit="return validateForm()">
+        <label>Username:</label>
+        <input type="text" name="username" required><br><br>
+
+        <label>Mobile Number:</label>
+        <input type="tel" name="mobileNumber" pattern="[0-9]{10}" required><br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" required><br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" required><br><br>
+
+        <label>Confirm Password:</label>
+        <input type="password" name="confirmPassword" required><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

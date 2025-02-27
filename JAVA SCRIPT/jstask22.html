@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        var form=prompt("Enter a string:");
+        function validatesubject(){
+        var subject=document.myform.subject.value;
+        if(subject==null || subject==""){
+            alert("Please fill out the Subject field");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    </script>
+    <h2>GMail like form</h2>
+   
+  <form name="myform"  method="get" onsubmit="validatesubject()" >
+    <label >From:</label>
+    <input type="text"  name="from" ><br><br>
+    <label >Recipient:</label>
+    <input type="text" name="recipient"><br><br>
+    <label >Subject:</label>
+    <input type="text"  name="subject" ><br><br>
+    <label >Body:</label>
+    <textarea name="body"> </textarea><br><br>
+    
+    <input type="submit" value="Send">
+  </form> 
+
+</body>
+</html>

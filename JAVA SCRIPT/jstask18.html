@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DATE TIME DAY MONTH DETAILS</h1>
+    <script>
+        function printTime(){
+            var now = new Date(); 
+            this.hours = now.getHours();
+            this.minutes = now.getMinutes();
+            this.date = now.getDate();
+            this.day = now.getDay()+1; 
+            this.year = now.getFullYear();
+            this.month = now.getMonth()+1; 
+
+            document.write("Time:"+hours);
+            document.write(":"+minutes);
+            document.write("<br>");
+            
+            document.write("Date:"+date);
+            document.write("<br>");
+            document.write("Day:"+day);
+            document.write("<br>");
+            document.write("Year:"+year);
+            document.write("<br>");
+            document.write("Month:"+month);
+        }
+        printTime();
+
+    </script>
+    
+</body>
+</html>

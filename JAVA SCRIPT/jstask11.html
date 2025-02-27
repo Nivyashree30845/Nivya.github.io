@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Username = false;
+        var Password = false;
+        while (!Username && !Password) {
+            var username = prompt("Enter Username (alphanumeric, maximum 10 characters)");
+            if (username != null && username != "" && /^[a-zA-Z0-9]{1,10}$/.test(username)) {
+                Username = true;
+            }
+            else {
+                alert("Invalid Username");
+            }
+            var password = prompt("Enter Password (letter, numbers, symbols)");
+            if (password != null && password != "" && /^(?=.[a-z])(?=.[0-9])(?=.*[^a-zA-Z0-9]).{1,}$/.test(password)) {
+                Password = true;
+            }
+            
+            else {
+                alert("Invalid password");
+            }
+            document.write("<h3>Welcome " + username + ", how can I help you?" + "</h3>");
+        }
+       
+        </script>
+
+  
+</body>
+</html>

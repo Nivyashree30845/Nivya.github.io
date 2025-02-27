@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function validateForm() {
+            var age = parseInt(document.forms["myform"]["age"].value);
+            var phoneNumber = document.forms["myform"]["phoneNumber"].value;
+            var email = document.forms["myform"]["email"].value;
+            var dob = document.forms["myform"]["dob"].value;
+            var education = document.forms["myform"]["education"].value;
+            var resume = document.forms["myform"]["resume"].value;
+            var candidateImage = document.forms["myform"]["candidateImage"].value;
+
+            if (age <= 0 || age > 60) {
+                alert("Invalid age for job application (age must be between 1 and 60)");
+                return false;
+            }
+
+            if (phoneNumber.length !== 10) {
+                alert("Please enter a valid 10-digit phone number");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Please enter an email address");
+                return false;
+            }
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid email format");
+                return false;
+            }
+
+            if (dob == "") {
+                alert("Please enter your date of birth");
+                return false;
+            }
+
+            if (education == "") {
+                alert("Please enter your education qualification");
+                return false;
+            }
+
+            if (resume == "") {
+                alert("Please upload your resume");
+                return false;
+            }
+            if (resume.size > 1000000) {
+                alert("Resume size exceeds 1MB limit");
+                return false;
+            }
+
+            if (candidateImage == "") {
+                alert("Please upload your candidate image");
+                return false;
+            }
+           
+            if (candidateImage.size > 1000000) {
+                alert("Candidate image size exceeds 1MB limit");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Job Seekers Application Form</h1>
+    <form name="myform"  onsubmit="return validateForm()">
+        <label>Full Name:</label>
+        <input type="text" name="fullName" required><br><br>
+
+        <label>Age:</label>
+        <input type="number" name="age" required><br><br>
+
+        <label>Phone Number:</label>
+        <input type="number" name="phoneNumber" pattern="[0-9]{10}" required><br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" required><br><br>
+
+        <label>Date of Birth:</label>
+        <input type="date" name="dob" required><br><br>
+
+        <label>Education Qualification:</label>
+        <input type="text" name="education" required><br><br>
+
+        <label>Resume (PDF, DOC, max 1MB):</label>
+        <input type="file" name="resume" accept=".pdf, .doc, .docx" required><br><br>
+
+        <label>Candidate Image (JPEG, PNG, max 1MB):</label>
+        <input type="file" name="candidateImage" accept="image/jpeg, image/png" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

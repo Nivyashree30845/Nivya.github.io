@@ -1,0 +1,35 @@
+
+    <script>
+        function validatephonenumber(){
+        var phoneNumber=document.myform.phoneNumber.value;
+        if(phoneNumber.length!=10){
+            alert("Phone number must be atleast 10 characters");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    </script>
+    <h2> Registration Form with Validation using Javascript</h2>
+   
+  <form name="myform"  method="get" onsubmit="return validatephonenumber()" >
+    <label >First Name:</label>
+    <input type="text"  name="firstName" placeholder="Enter your first name" required><br><br>
+    <label >Last Name:</label>
+    <input type="text" name="lastName" placeholder="Enter your last name" required><br><br>
+    <label>Gender:</label>
+    <select  name="gender" required>
+        <option>Select</option>
+      <option> Male</option>
+      <option>Female</option>
+      <option >Other</option>
+    </select><br><br>
+    <label>Date of Birth:</label>
+    <input type="date" name="dob" required><br><br>
+    <label>Phone Number:</label>
+    <input type="number" name="phoneNumber" pattern="[0-9]{10}"placeholder="Enter your phone number" required><br><br>
+   
+    <input type="submit" value="Register">
+  </form> 
+

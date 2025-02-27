@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alphabetical Order</title>
+    
+</head>
+<body>
+    <h1>Names in Alphabetical Order</h1>
+    <button onclick="displayNames()">Display Names</button>
+    
+    <script>
+        function displayNames() {
+            var names = new Array("Nivya", "Sowmi", "Rithani", "Sweatha", "Harsha", "Orange", "Mango", "Poorna", "Monisha", "Bmw", "Ford", "Geetha", "Apple", "Mousambi","Strawberry");
+            names.sort();
+        for(i=0;i<names.length;i++)
+        
+        {
+            document.write(names[i]+"<br/>");
+        }
+        }
+    </script>
+</body>
+</html>

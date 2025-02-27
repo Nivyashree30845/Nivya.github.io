@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <script>
+        let balance = 0;
+        function Deposit(amount) {
+            balance += amount;
+        }
+        function Withdraw(amount) {
+            if (amount <= balance){
+                balance -= amount;
+            }
+            else {
+                document.write("Insufficient Amount<br>");
+            }
+        }
+        function Displaybalance() {
+            document.write("Current Balance : " + balance + "<br>");
+        }
+        function BankAccount() {
+            let AccountNumber = prompt("Enter Account Number : ");
+            document.write("Account Number : " + AccountNumber + "<br>");
+            while (true) {
+                let choice = prompt("Enter 1 to Deposit, 2 to Withdraw, 3 to Display Balance, 4 to Exit<br>");
+                switch (choice) {
+                    case "1":
+                        let DepositAmount = parseInt(prompt("Enter Amount to Deposit : "));
+                        if (!isNaN(DepositAmount) && DepositAmount > 0) {
+                            Deposit(DepositAmount);
+                            document.write("Deposit Amount : " + DepositAmount + "<br>");
+                            document.write("Deposited Successfully..." + "<br>");
+                            Displaybalance();
+                        }
+                        else {
+                            document.write("Insufficient Amount..." + "<br>");
+                        }
+                        break;
+                    case "2":
+                        let WithdrawAmount = parseFloat(prompt("Enter Amount to Withdraw : "));
+                        if (!isNaN(WithdrawAmount) && WithdrawAmount > 0) {
+                            Withdraw(WithdrawAmount);
+                            document.write("Withdraw Amount : " + WithdrawAmount + "<br>");
+                            document.write("Withdraw Successfull..." + "<br>");
+                            Displaybalance();
+                        }
+                        else {
+                            document.write("Insufficient Amount..." + "<br>");
+                        }
+                        break;
+                    case "3":
+                        Displaybalance();
+                        break;
+                    case "4":
+                        document.write("Thank you" + "<br>");
+                        exit;
+                        return;
+                        break;
+                    default : 
+                        document.write("Enter valid choices..." + "<br>");
+                }
+            }
+        }
+    </script>
+
+<form>
+    <input type="button" value="Deposit / Withdraw / Balance" onclick ="BankAccount()"/>
+</form>
+</body>
+</html>

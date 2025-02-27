@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function validateForm() {
+            var age = parseInt(document.myform.age.value);
+            var height = parseInt(document.myform.height.value);
+            var weight = parseInt(document.myform.weight.value);
+            var phoneNumber = document.myform.phoneNumber.value;
+
+            if (age < 8 || height < 70) {
+                alert("Invalid age and height for registration");
+                return false;
+            } else if (age > 45) {
+                alert("Invalid age for registration");
+                return false;
+            } else if (phoneNumber.length != 10) {
+                alert("Please fill out the correct phone number");
+                return false;
+            } else {
+                if (age <= 10) {
+                    document.write("You come under junior category");
+                } else if (age <= 20) {
+                   document.write("You come under subjunior category");
+                } else if (age <= 45) {
+                    document.write("You come under senior category");
+                }
+                return true;
+            }
+        }
+      
+    </script>
+    
+    <h1>Player Registration Form</h1>
+    <form name= myform method="get" onsubmit="validateForm()">
+        <label>Full Name:</label>
+        <input type="text"  name="fullName" required><br><br>
+
+        <label>Age:</label>
+        <input type="number" name="age" required><br><br>
+
+        <label>Height (in cm):</label>
+        <input type="number" name="height" required><br><br>
+
+        <label>Weight (in kg):</label>
+        <input type="number" name="weight" required><br><br>
+
+        <label>Phone Number:</label>
+        <input type="number" name="phoneNumber" pattern="[0-9]{10}" required><br><br>
+
+        <label >Gender:</label>
+        <select  name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

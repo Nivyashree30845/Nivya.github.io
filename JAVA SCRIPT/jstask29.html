@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Palindrome String</title>
+    <script>
+        function generatePalindrome() {
+            var inputString = document.getElementById("inputString").value;
+            if (inputString === "") {
+                alert("Please enter a string.");
+                return false;
+            }
+
+            var reversedString = inputString.split('').reverse().join('');
+            document.write("The Reversed string :"+reversedString);
+        }
+    </script>
+</head>
+<body>
+    <h1>Palindrome String</h1>
+    <label>Enter a string:</label>
+    <input type="text" id="inputString"><br><br>
+    <button onclick="generatePalindrome()">Generate Palindrome</button>
+    
+</body>
+</html>

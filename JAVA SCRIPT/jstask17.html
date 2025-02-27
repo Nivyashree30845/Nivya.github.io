@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alphabetical Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display Names in Alphabetical Order</h1>
+    
+    <input type="text" id="name1" placeholder="Enter first name">
+    <input type="text" id="name2" placeholder="Enter second name">
+    <button onclick="addAndDisplayNames()">Add and Display Names</button>
+    
+    
+    <script>
+        const names = ["Charlie", "Alice", "Bob", "Eve", "David", "Oscar", "Mango", "Linda", "Sophia", "James", "Bence", "Toyota", "Wan", "Peng", "Mohan"];
+
+        function addAndDisplayNames() {
+            const name1 = document.getElementById('name1').value;
+            const name2 = document.getElementById('name2').value;
+
+            if (name1) names.push(name1);
+            if (name2) names.push(name2);
+
+            names.sort();
+        
+            const namesList = document.getElementById('names');
+        for(i=0;i<names.length;i++)
+        {
+            document.write(names[i]+"<br/>");
+        }
+            
+        }
+    </script>
+</body>
+</html>
