@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple eCommerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .products {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .product {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 23%;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: #45a049;
+        }
+        .cart {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Simple eCommerce Website</h1>
+</header>
+
+<div class="container">
+    <div class="products">
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>$10.00</p>
+            <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>$15.00</p>
+            <button onclick="addToCart('Product 2', 15)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart('Product 3', 20)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>$25.00</p>
+            <button onclick="addToCart('Product 4', 25)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="cart">
+    <h3>Shopping Cart</h3>
+    <ul id="cartItems">
+        <li>No items added</li>
+    </ul>
+    <p>Total: $<span id="totalAmount">0</span></p>
+</div>
+
+<script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(productName, price) {
+        cart.push({ name: productName, price: price });
+        total += price;
+        updateCart();
+    }
+
+    function updateCart() {
+        const cartItems = document.getElementById('cartItems');
+        const totalAmount = document.getElementById('totalAmount');
+
+        // Clear the current cart list
+        cartItems.innerHTML = '';
+
+        // Add each item in the cart to the list
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item.name + " - $" + item.price;
+            cartItems.appendChild(li);
+        });
+
+        // Update the total amount
+        totalAmount.textContent = total.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
